@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>3Dモデルを表示しよう！</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- モデルを先に読み込む -->
+      <a-assets>
+        <a-asset-item id="tree" src="https://raw.githubusercontent.com/aframevr/aframe/master/examples/assets/models/tree2.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- 読み込んだ3Dモデルを表示 -->
+      <a-entity 
+        gltf-model="#tree" 
+        position="0 0 -3" 
+        scale="1 1 1">
+      </a-entity>
+
+      <!-- カメラとカーソル -->
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+
+      <!-- 空と地面 -->
+      <a-sky color="#CCE6FF"></a-sky>
+      <a-plane color="#77DD77" rotation="-90 0 0" width="30" height="30"></a-plane>
+    </a-scene>
+  </body>
+</html>
