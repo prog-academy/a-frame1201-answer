@@ -2,8 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>ロボットモデルを表示しよう</title>
+    <title>アニメーション付きロボット</title>
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <!-- animation-mixerコンポーネントの読み込み -->
+    <script src="https://unpkg.com/aframe-extras.animation-mixer@3.4.0/dist/aframe-extras.animation-mixer.js"></script>
   </head>
   <body>
     <a-scene>
@@ -11,17 +13,19 @@
       <a-assets>
         <a-asset-item
           id="robotModel"
-          src=""
+          src="https://cdn.glitch.global/13c460bf-a417-469b-b527-752592399bfd/RobotExpressive.glb?v=1747714202319"
         ></a-asset-item>
       </a-assets>
 
-      <!-- アニメーションなしロボット -->
+      <!-- アニメーション付きのロボット clip: Dance, Death, Idle, Jump, No, Punch, Running, Sitting, Standing, ThumbsUp, Walking, WalkJump, Wave, Yes -->
       <a-gltf-model
-        src="#robotModel"
+        src="#robotModel" 
+                    
+        animation-mixer="clip: Dance"
         position="0 0 -3"
         scale="0.5 0.5 0.5"
-      ></a-gltf-model>
-
+      >
+      </a-gltf-model>
       <!-- カメラとカーソル -->
       <a-camera>
         <a-cursor></a-cursor>
