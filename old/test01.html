@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ロボットモデルを表示しよう</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- アセットの読み込み -->
+      <a-assets>
+        <a-asset-item
+          id="robotModel"
+          src=""
+        ></a-asset-item>
+      </a-assets>
+
+      <!-- アニメーションなしロボット -->
+      <a-gltf-model
+        src="#robotModel"
+        position="0 0 -3"
+        scale="0.5 0.5 0.5"
+      ></a-gltf-model>
+
+      <!-- カメラとカーソル -->
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+
+      <!-- 空と地面 -->
+      <a-sky color="#CCE6FF"></a-sky>
+      <a-plane
+        color="#77DD77"
+        rotation="-90 0 0"
+        width="30"
+        height="30"
+      ></a-plane>
+    </a-scene>
+  </body>
+</html>
